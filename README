@@ -1,0 +1,24 @@
+Make kongz images without background
+
+Commands to run before:
+
+mkdir assets
+cd assets
+mkdir metadata
+cd metadata
+for i in $(seq 1 1000)
+do 
+	wget "https://kongz.herokuapp.com/api/metadata/$i"
+	sleep 1
+done
+cd ..
+mkdir images
+for i in $(seq 1 1000)
+do
+	wget -c "$(cat metadata/$i | jq -r .image)" -O images/$i
+	sleep 2
+done
+mkdir images-nobg
+
+Then:
+go run cmd/kongzbg/main.go
