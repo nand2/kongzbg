@@ -20,7 +20,22 @@ const kongzPixelInRealPixels = 20
 func main() {
 	log.Printf("Hello!")
 
-	processKongz(705)
+	// Process all the kongz
+	specialGenKongzIds := []uint{1, 101, 201, 301, 420, 501, 666, 701, 801, 1000}
+	for id := uint(1); id <= 1000; id++ {
+		// We skip the special one, we'll do manually
+		isSpecialGenKongz := false
+		for _, specialGenKongzId := range specialGenKongzIds {
+			if id == specialGenKongzId {
+				isSpecialGenKongz = true
+			}
+		}
+		if isSpecialGenKongz {
+			continue
+		}
+
+		processKongz(id)
+	}
 }
 
 func processKongz(id uint) {
