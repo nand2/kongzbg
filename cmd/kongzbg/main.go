@@ -20,7 +20,7 @@ const kongzPixelInRealPixels = 20
 func main() {
 	log.Printf("Hello!")
 
-	processKongz(17)
+	processKongz(22)
 }
 
 func processKongz(id uint) {
@@ -152,6 +152,10 @@ func getKongzBackgroundMask(id uint) (mask [][]int) {
 		{
 			traits: []string{"Mohawk"},
 			maskLocationsToUnset: [][]int{{15, 4}, {17, 3}, {18, 3}, {19, 3}, {20, 3}, {20, 2}, {21, 3}, {21, 2}, {22, 3}, {22, 2}, {22, 1}, {23, 4}, {23, 3}, {23, 2}, {23, 1}},
+		},
+		{
+			traits: []string{"E-Cigarette"},
+			maskLocationsToUnset: [][]int{{29, 25}, {29, 26}, {30, 24}, {30, 25}, {30, 26}, {31, 25}},
 		},
 	}
 
