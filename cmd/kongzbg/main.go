@@ -114,6 +114,7 @@ func getKongzBackgroundMask(id uint) (mask [][]int) {
 
 	// Get the genesis traits
 	kongzTraits := getKongzTraitByType("Genesis Trait", id)
+	log.Printf("Traits: %v", kongzTraits)
 
 	// Substractive mask per trait
 	var traitsSubstractiveMasks = []struct{
@@ -123,6 +124,10 @@ func getKongzBackgroundMask(id uint) (mask [][]int) {
 		{
 			traits: []string{"Propeller Hat"},
 			maskLocationsToUnset: [][]int{{5, 10}, {5, 9}, {5, 8}, {6, 8}, {6, 7}, {7, 7}, {7, 6}, {8, 7}, {8, 6}, {8, 5}, {9, 6}, {9, 5}, {9, 4}, {10, 6}, {10, 5}, {10, 4}, {11, 5}, {11, 4}, {11, 3}, {12, 4}, {12, 3}, {13, 4}, {13, 3}, {14, 4}, {14, 3}, {15, 4}, {15, 3}, {16, 3}, {17, 3}, {18, 3}, {19, 3}, {20, 3}, {21, 3}, {22, 3}, {23, 4}, {24, 4}, {25, 5}, {26, 7}, {26, 6}, {27, 8}, {27, 7}, {28, 8}, {28, 9}, {17, 2}, {17, 1}, {16, 1}, {15, 1}, {14, 1}, {13, 1}, {12, 1}, {11, 1}, {18, 1}, {19, 1}, {20, 1}, {21, 1}, {22, 1}, {23, 1}},
+		},
+		{
+			traits: []string{"Blue Sunglasses"},
+			maskLocationsToUnset: [][]int{{29, 13}, {29, 14}},
 		},
 	}
 
