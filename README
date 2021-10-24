@@ -1,20 +1,19 @@
 Make kongz images without background
-(Exceptions : legendary ones: 1, 101, 201, 301, 420, 501, 666, 701, 801, 1000)
 
-Commands to run before:
+Commands to run before (using 4000 as the maximum id for now, babies still being born):
 
 mkdir assets
 cd assets
 mkdir metadata
 cd metadata
-for i in $(seq 1 1000)
+for i in $(seq 1 4000)
 do 
 	wget "https://kongz.herokuapp.com/api/metadata/$i"
 	sleep 1
 done
 cd ..
 mkdir images
-for i in $(seq 1 1000)
+for i in $(seq 1 4000)
 do
 	wget -c "$(cat metadata/$i | jq -r .image)" -O images/$i
 	sleep 2
